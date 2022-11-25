@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento notas</title>
+    <style>
+        p{
+            color: rgb(255, 255, 255);
+        }
+        button{
+            margin-left: 50px;
+            margin-top: 35px;
+            padding: 10px;
+
+            background-color: rgb(13, 132, 161);
+
+            color: white;
+            border: transparent;
+            border-radius: 5px;
+
+            transition: all 1.2s ease;
+        }
+        button:hover{
+            background-color: rgb(3, 77, 95);
+        }
+        div#res{
+            margin-top: 20px;
+        }
+        body{
+            background-color: aqua;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculador de Média</h1>
+    <h5>Qual sua nota do primeiro bimestre?</h5>
+    <input type="number" name="txtn1" id="txtn1"> <br>
+    <h5>Qual sua nota do segundo bimestre?</h5>
+    <input type="number" name="txtn2" id="txtn2"> <br>
+    <h5>Qual sua nota do terceiro bimestre?</h5>
+    <input type="number" name="txtn3" id="txtn3"> <br>
+    <h5>Qual sua nota do quarto bimestre?</h5>
+    <input type="number" name="txtn4" id="txtn4"> <br>
+    <button type="button" value="Calcular" onclick="calcular()">Calcular</button>
+    <p><strong>Resultado:</strong> <div id="res"><strong>Sua resposta aparecerá aqui.</strong></div> </p>
+    <script>
+        function calcular(){
+            var tn1 = window.document.getElementById("txtn1")
+            var tn2 = window.document.getElementById("txtn2")
+            var tn3 = window.document.getElementById("txtn3")
+            var tn4 = window.document.getElementById("txtn4")
+            var res = window.document.getElementById("res")
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var n3 = Number(tn3.value)
+            var n4 = Number(tn4.value)
+            var s = (n1+n2+n3+n4)/4
+            var valor = s >= 6 ?"Aprovado": "Reprovado"
+            res.innerHTML = `A sua média final é <strong>${s}</strong>. <br>Portanto, você está <strong>${valor}</strong>.`
+        } 
+
+    </script>
+</body>
+</html>
